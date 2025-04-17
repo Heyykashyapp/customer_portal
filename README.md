@@ -38,6 +38,17 @@ DB_DATABASE=customer_portal
 DB_USERNAME=root
 DB_PASSWORD=root
 
+# For mfa email send used mailtrap
+
+MAIL_MAILER=smtp
+MAIL_HOST=sandbox.smtp.mailtrap.io
+MAIL_PORT=2525
+MAIL_USERNAME=1a1c0d38bbb212
+MAIL_PASSWORD=9a14fece7819b6
+MAIL_ENCRYPTION=tls
+MAIL_FROM_ADDRESS=kashyapp722@gmail.com
+MAIL_FROM_NAME="customer portal"
+
 
 ## Install Passport
 
