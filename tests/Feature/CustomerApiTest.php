@@ -18,7 +18,7 @@ class CustomerApiTest extends TestCase
     public function test_create_customer_validation()
     {
         $user = User::factory()->create([
-            'email' => 'testuser@example.com',
+            'email' => 'testuser@gmail.com',
             'password' => Hash::make('password')
         ]);
 
@@ -31,14 +31,14 @@ class CustomerApiTest extends TestCase
     public function test_create_customer_success()
     {
         $user = User::factory()->create([
-            'email' => 'testuser@example.com',
+            'email' => 'testuser@gmail.com',
             'password' => Hash::make('password')
         ]);
 
         $data = [
-            'first_name' => 'John',
-            'last_name' => 'Doe',
-            'email' => 'johndoe@example.com',
+            'first_name' => 'prashant',
+            'last_name' => 'kashyap',
+            'email' => 'prashantkashyap@gmail.com',
             'dob' => '1990-01-01',
             'age' => 31
         ];
@@ -46,9 +46,9 @@ class CustomerApiTest extends TestCase
         $response = $this->actingAs($user, 'api')->postJson('/api/customers', $data);
         $response->assertStatus(201); 
         $response->assertJson(fn (AssertableJson $json) =>
-    $json->where('first_name', 'John')
-         ->where('last_name', 'Doe')
-         ->where('email', 'johndoe@example.com')
+    $json->where('first_name', 'prashant')
+         ->where('last_name', 'kashyap')
+         ->where('email', 'prashantkashyap@gmail.com')
          ->etc()
 
     );
@@ -58,11 +58,11 @@ class CustomerApiTest extends TestCase
     public function test_get_customers_list()
     {
         $user = User::factory()->create([
-            'email' => 'testuser@example.com',
+            'email' => 'testuser@gmail.com',
             'password' => Hash::make('password')
         ]);
 
-        Customer::factory()->create(['first_name' => 'John', 'last_name' => 'Doe']);
+        Customer::factory()->create(['first_name' => 'prashant', 'last_name' => 'kashyap']);
 
         $response = $this->actingAs($user, 'api')->getJson('/api/customers');
         $response->assertStatus(200); 
@@ -73,22 +73,22 @@ class CustomerApiTest extends TestCase
     public function test_update_customer()
     {
         $user = User::factory()->create([
-            'email' => 'testuser@example.com',
+            'email' => 'testuser@gmail.com',
             'password' => Hash::make('password')
         ]);
 
         $customer = Customer::factory()->create([
-            'first_name' => 'John',
-            'last_name' => 'Doe',
-            'email' => 'johndoe@example.com',
+            'first_name' => 'prashant',
+            'last_name' => 'kashyap',
+            'email' => 'prashantkashyap@gmail.com',
             'dob' => '1990-01-01',
             'age' => 31
         ]);
 
         $data = [
-            'first_name' => 'Jane',
-            'last_name' => 'Smith',
-            'email' => 'janesmith@example.com',
+            'first_name' => 'Ankit',
+            'last_name' => 'kumar',
+            'email' => 'Ankitkumar@gmail.com',
             'dob' => '1992-02-02',
             'age' => 29
         ];
@@ -96,9 +96,9 @@ class CustomerApiTest extends TestCase
         $response = $this->actingAs($user, 'api')->putJson("/api/customers/{$customer->id}", $data);
         $response->assertStatus(200); 
         $response->assertJson(fn (AssertableJson $json) =>
-        $json->where('first_name', 'Jane')
-             ->where('last_name', 'Smith')
-             ->where('email', 'janesmith@example.com')
+        $json->where('first_name', 'Ankit')
+             ->where('last_name', 'kumar')
+             ->where('email', 'Ankitkumar@gmail.com')
              ->etc()
     );
     
@@ -109,14 +109,14 @@ class CustomerApiTest extends TestCase
     public function test_delete_customer()
     {
         $user = User::factory()->create([
-            'email' => 'testuser@example.com',
+            'email' => 'testuser@gmail.com',
             'password' => Hash::make('password')
         ]);
 
         $customer = Customer::factory()->create([
-            'first_name' => 'John',
-            'last_name' => 'Doe',
-            'email' => 'johndoe@example.com',
+            'first_name' => 'prashant',
+            'last_name' => 'kashyap',
+            'email' => 'prashantkashyap@gmail.com',
             'dob' => '1990-01-01',
             'age' => 31
         ]);
