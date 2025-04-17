@@ -20,8 +20,8 @@ A complete Laravel project to manage customer records via RESTful APIs and web U
 ### 1. 🔁 Clone the Project
 
 ```bash
-git clone https://github.com/your-username/customer-portal.git
-cd customer-portal
+git clone https://github.com/Heyykashyapp/customer_portal.git
+cd customer_portal
 
 
  ## Install Dependencies
