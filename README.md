@@ -1,10 +1,10 @@
-# 📘 Customer Management System (Laravel + MAMP Setup)
+#  Customer Management System (Laravel + MAMP Setup)
 
-A complete Laravel project to manage customer records via RESTful APIs and web UI. Built with Passport for OAuth2 authentication, Scribe for API documentation, and PHPUnit for automated testing. This version is tailored for Mac users using **MAMP**.
+A complete Laravel project to manage customer records via RESTful APIs and web UI. Built with Passport for OAuth2 authentication, Scribe for API documentation, and PHPUnit for automated testing.
 
 ---
 
-## 🛠️ Features
+##  Features
 
 - Customer CRUD (Create, Read, Update, Delete)
 - OAuth2 Authentication using Laravel Passport
@@ -15,11 +15,11 @@ A complete Laravel project to manage customer records via RESTful APIs and web U
 
 ---
 
-## ⚙️ Setup (MAMP + Laravel)
+##  Setup (MAMP + Laravel)
 
-### 1. 🔁 Clone the Project
+### 1.  Clone the Project
 
-```bash
+bash
 git clone https://github.com/Heyykashyapp/customer_portal.git
 cd customer_portal
 
